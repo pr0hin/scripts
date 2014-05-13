@@ -1,1 +1,2 @@
 hidden_files runs on mac osx mavericks, determines if the hidden files are visible/invisible and performs the opposite
+generate_bash_profile generates .bash_profile(OS X) or bash_rc(Linux) depending on OS
