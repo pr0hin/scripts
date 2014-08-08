@@ -1,2 +1,20 @@
-hidden_files runs on mac osx mavericks, determines if the hidden files are visible/invisible and performs the opposite
-generate_bash_profile generates .bash_profile(OS X) or bash_rc(Linux) depending on OS
+These scripts are intended to work on *nix systems unless otherwise indicated
+
+HIDDENFILES (MACOSX only):
+This script will make your files visible in Finder if they are hidden and vice versa if you run it again.
+
+BASH PROFILE GENERATOR:
+Basic script that generates sets up the shell environment as I like it.
+
+HANDINSCRIPT:
+This script will perform handin after the user specifies his/her cs ID, the location of the folder that will be copied, the course folder and the assignment folder. The default Unix server used for this script is remote.ugrad.cs.ubc.ca
+
+FOR ALL SCRIPTS:
+If you don't need the whole repository you can just click on the file and copy and paste the file into the editor of your choice. Save the file with a ".sh" extension 
+
+Make sure you have given the file executible access via the command "chmod 755". 
+You can then execute the script via "bash /path/to/script.sh" 
+
+To make the script available to execute without having to type the path everytime, add the path to your $PATH variable.
+
+
