@@ -1,7 +1,7 @@
 #!bin/bash -x
 echo  "Enter CS ID:"
 read ID
-echo  "Enter a file/folder you wish to copy:"
+echo  "Enter the path of file/folder you wish to copy:"
 read ARG
 echo  "Enter the destination folder. This will also be used as the first argument to handin, usually the course number (Will be created in the home directory if it doesn't exist)" 
 read DEST
