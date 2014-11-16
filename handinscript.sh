@@ -37,18 +37,26 @@ while true; do
         fi
     done
     
-    echo  "Enter the destination folder. This will also be used as the first argument to handin, usually the course number (Will be created in the home directory if it doesn't exist)" 
+    echo  "Enter the destination folder. This will also be used as the first argument to handin, usually the course number (Eg cs213). If this folder does not exist on the remote machine you can create it by opening a new terminal and executing: ssh  -t yourid@remote.ugrad.cs.ubc.ca  \"mkdir \\\$HOME/nameOfFolder;\"" 
     read DEST
-    echo  "Enter assignment/lab folder. This will be the second argument to handin, usually the assignment/lab folder"
-    read ASSIGN
-
     if [ -d "$ARG" ]; then
         scp -r "$ARG" "$ID"@remote.ugrad.cs.ubc.ca:~/$DEST 
     else 
         scp "$ARG" "$ID"@remote.ugrad.cs.ubc.ca:~/$DEST  
     fi 
-
-    ssh  -t "$ID"@remote.ugrad.cs.ubc.ca  "cd \$HOME/$DEST; /cs/local/bin/handin '$DEST' '$ASSIGN'"
+    echo "Files have been copied over. Do you wish to initiate handin at this time? [Y/n]"
+    read yn
+    while true; do
+        case $yn in
+            Yes|y|Y )  echo  "Enter assignment/lab folder. This will be the second argument to handin, usually the assignment/lab folder"
+                read ASSIGN
+                ssh  -t "$ID"@remote.ugrad.cs.ubc.ca  "cd \$HOME/$DEST; /cs/local/bin/handin '$DEST' '$ASSIGN'"
+                break;; 
+            No|n|N ) ssh -t "$ID"@remote.ugrad.cs.ubc.ca
+                break;;
+            * ) "Invalid selection"
+        esac
+    done
 
     exit 0
 

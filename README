@@ -7,6 +7,7 @@ BASH PROFILE GENERATOR:
 Basic script that generates sets up the shell environment as I like it.
 
 HANDINSCRIPT:
+Make sure that you have set up the folder with all the files you want to copy over. You can copy individual files as well, but only one at a time. The script will search your machine for the folder or file and display all matches. If you provide the script with more information about the location of your folder, the search will be faster (Eg. lab6 vs cs213/lab6 vs ~/cs213/lab6).
 This script will perform handin after the user specifies his/her cs ID, the location of the folder that will be copied, the course folder and the assignment folder. The default Unix server used for this script is remote.ugrad.cs.ubc.ca
 
 FOR ALL SCRIPTS:
